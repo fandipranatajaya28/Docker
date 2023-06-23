@@ -25,7 +25,6 @@ services:
       - "4171:4171"
   redis:
     image: redis:7.0-alpine
-    restart: always
     ports:
       - "6379:6379"
     command: redis-server --save 60 1 --loglevel warning
@@ -33,7 +32,6 @@ services:
       - redis:/data
   elasticsearch:
     image: elasticsearch:8.6.2
-    restart: always
     ports:
       - "9200:9200"
     environment:
